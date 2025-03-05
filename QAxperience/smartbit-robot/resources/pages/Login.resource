@@ -10,4 +10,6 @@ Go to login page
 Submit login form
     [Arguments]    ${email}    ${password}
     Fill Text    input[name=email]    ${email}
-    Fill Text    input[name=password]    ${email}
+    Fill Text    input[name=password]    ${password}
+    Click        css=button >> text=Entrar
+

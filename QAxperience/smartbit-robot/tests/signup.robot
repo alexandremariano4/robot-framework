@@ -13,8 +13,13 @@ Test Teardown     Take Screenshot
 
 *** Test Cases ***
 Deve iniciar o cadastro do cliente
-    ${account}    Get Fake Account
+    [Tags]    smoke
+    ${account}    Create Dictionary
+    ...    name=Alexandre Teste
+    ...    email=teste@gmail.com
+    ...    cpf=48637901042
 
+    Delete Account By Email    ${account}[email]
     Submit Signup form    ${account}
     Verify welcome message
 
