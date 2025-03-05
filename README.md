@@ -45,7 +45,7 @@ Deve exibir o Slogan na Landing Page
 
 A estrutura ideal para executar os testes em robot é a seguinte
 
-![image.png](attachment:9035e17d-8700-4126-b4b0-d8e179077b18:image.png)
+![image.png](images/image1.png)
 
 O diretório principal, com a pasta resources e tests, e a pasta logs sendo gerada via parâmetro ao executar o script do robot `robot -d ./logs .\tests\slogan.robot`
 
@@ -79,7 +79,7 @@ utilize o comando `pip install faker` para instalar a biblioteca faker para o py
 
 Para criar um arquivo “pai” onde as automações irão se centralizar, vá na pasta resources e crie um arquivo chamado “base.resources”, além de criar dentro da pasta resources, uma pasta chamada “libs” com um arquivo chamado account
 
-![image.png](attachment:5a24be00-38bd-46fa-858e-1972695a3f9a:image.png)
+![image.png](images/image2.png)
 
 No arquivo “signup.robot” , importe a base resource utilizando a seguinte instrução no código `*Resource*    ../resources/base.resource`
 
