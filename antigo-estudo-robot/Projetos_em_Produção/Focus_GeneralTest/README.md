@@ -1,1 +1,0 @@
-testes automatizados para o focus frontend
