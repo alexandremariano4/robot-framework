@@ -1,0 +1,78 @@
+{
+    "create":{
+        "account":{
+            "name":  "Caroline Teste",
+            "email": "caroltest@gmail.com",
+            "cpf":   "24507099080"
+        },
+        "plan": {
+            "name": "Plano Black",
+            "id": 2,
+            "price": 79.99
+        },
+        "credit_card":{
+            "number": "4242424242424242",
+            "holder":"Caroline Teste",
+            "month": "12",
+            "year": "2030",
+            "cvv":  "123"
+        }
+    },
+    "duplicate":{
+        "account":{
+            "name":  "Barney Stinso",
+            "email": "barneco@gmail.com",
+            "cpf":   "30405025815"
+        },
+        "plan": {
+            "name": "Plano Smart",
+            "id": 1,
+            "price": 99.99
+        },
+        "credit_card":{
+            "number": "4242424242424242",
+            "holder":"Barney Stinso",
+            "month": "12",
+            "year": "2030",
+            "cvv":  "123"
+        }
+    },
+    "search":{
+        "account":{
+            "name":  "Emily Stone",
+            "email": "emily@gmail.com",
+            "cpf":   "27281688148"
+        },
+        "plan": {
+            "name": "Plano Smart",
+            "id": 1,
+            "price": 99.99
+        },
+        "credit_card":{
+            "number": "4242424242424242",
+            "holder":"Emily Stone",
+            "month": "12",
+            "year": "2030",
+            "cvv":  "123"
+        }
+    },
+    "remove":{
+        "account":{
+            "name":  "Thiaguinho Xarope",
+            "email": "thigo@gmail.com",
+            "cpf":   "38653340246"
+        },
+        "plan": {
+            "name": "Plano Black",
+            "id": 2,
+            "price": 79.99
+        },
+        "credit_card":{
+            "number": "4242424242424242",
+            "holder":"Thiaguinho Xarope",
+            "month": "12",
+            "year": "2030",
+            "cvv":  "123"
+        }
+    }
+}
