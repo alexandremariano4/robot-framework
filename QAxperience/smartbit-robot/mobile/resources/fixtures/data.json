@@ -1,0 +1,42 @@
+{
+    "create":{
+        "account":{
+            "name":  "Stella Stinso",
+            "email": "stellinso@gmail.com",
+            "cpf":   "03293255744"
+        },
+        "plan": {
+            "name": "Plano Black",
+            "id": 2,
+            "price": 79.99
+        },
+        "credit_card":{
+            "number": "4242424242424242",
+            "holder":"Stella Stinso",
+            "month": "12",
+            "year": "2030",
+            "cvv":  "123"
+        }
+    },
+    "update":{
+        "account":{
+            "name":  "DomToretto",
+            "email": "domtoretto@gmail.com",
+            "cpf":   "98948668676",
+            "weight": 80,
+            "height": 170
+        },
+        "plan": {
+            "name": "Plano Black",
+            "id": 2,
+            "price": 79.99
+        },
+        "credit_card":{
+            "number": "4242424242424242",
+            "holder":"DomToretto",
+            "month": "12",
+            "year": "2030",
+            "cvv":  "123"
+        }
+    }
+}
