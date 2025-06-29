@@ -251,3 +251,119 @@ Get Json fixture
     
     RETURN    ${data}[${scenario}]
 ```
+# Mobile - Appium e Robot Framework
+
+- Instalar o Android Studio
+- Criar um emulador
+
+Passos para executar o Appium
+
+1. Criar um diretório com o nome por exemplo “`appium-qax`”, 
+2. Ir para o diretório e escrever `npm init` 
+3. Instale o appium utilizando `npm i appium` dessa forma o appium será instalado localmente no diretório, não globalmente, podendo ter mais controle das versões
+4. Agora para iniciar o appium utilize o comando `npx appium` para iniciar o servidor do appium
+
+### **Appium Doctor**
+
+Instale utilizando o comando `npm i appium-doctor` é uma ferramenta que faz o diagnóstico no sistema operacional para verificar se está preparado para trabalhar com o appium para android ou IOS
+
+utilizando o comando  `npx appium-doctor --android` ele faz o diagnóstico
+
+![image.png](attachment:782570a1-857e-4005-81b0-f4aa6888bcea:image.png)
+
+Vá nas variáveis de ambiente do computador para criar estas variáveis:
+
+- JAVA_HOME
+    - Exemplo: ***C:\Program Files\Java\jdk-23***
+        - Vá no PATH do sistema e clique em new para criar uma nova variável de ambiente: ***%JAVA_HOME%\bin***
+- ANDROID_HOME
+    - Exemplo: ***C:\Users\alexa\AppData\Local\Android\Sdk***
+        - Vá no PATH do sistema e clique em new para criar uma nova variável de ambiente: ***%ANDROID_HOME%\platform-tools***
+
+Depois de fazer tudo isso e rodar novamente o appium doctor, verifique se está correto a configuação
+
+![image.png](attachment:eb9485c6-3e90-4db9-96ea-12c035468c33:image.png)
+
+### Appium-Inspector
+
+Link do github do appium inspector: https://github.com/appium/appium-inspector
+
+Procure a parte de “Releases” e abra, pegue a última versão e fala o download do exe
+
+### Capabilities
+
+```python
+{
+  "appium:platformName": "Android",
+  "appium:deviceName": "Appium",
+  "appium:automationName": "UIAutomator2",
+  "appium:app": "C:\\Users\\alexa\\Documents\\Projetos\\Pessoais\\python-selenium\\robot-framework\\QAxperience\\smartbit-robot\\mobile\\app\\qax-smartbit.apk",
+  "appium:autoGrantPermissions": true
+}
+```
+
+Ou, pode inserir tudo em um objeto da seguinte forma como mostra na documentação do appium https://appium.io/docs/en/latest/guides/caps/
+
+```python
+{
+  "platformName": "Android",
+  "appium:options": {
+    "automationName": "UIAutomator2",
+    "deviceName": "Appium",
+    "app": "C:\\Users\\alexa\\Documents\\Projetos\\Pessoais\\python-selenium\\robot-framework\\QAxperience\\smartbit-robot\\mobile\\app\\qax-smartbit.apk",
+    "autoGrantPermissions": true
+  }
+}
+```
+
+---
+
+### Comandos gerais
+
+- `adb devices` → Lista os dispositivos emuladores que estão ativos no momento
+- `npx appium driver list --installed` → Lista os drivers instalados (Ex: UIAutomator)
+- `npx appium driver install uiautomator2` → Instala o driver automator
+- `npx appium` → Executa o servidor appium
+
+---
+
+## Iniciando na automação Mobile na aplicação da QAx
+
+1. Inicie o banco de dados 
+2. Vá para o diretório do projeto de automação mobile e crie novamente o projeto node usando `npm init` e instale o appium e appium doctor e o driver do uiautomator conforme instruções acima 
+3. Abra o emulador com o android studio
+4. Execute a API do projeto, o projeto web para poder visualizar a integração e o banco de dados pelo docker
+5. Inicie o servidor appium e coloque as capabilities corretas no appium inspector
+6. Ao iniciar a aplicação pelo appium, e já estar aparecendo no appium inspector, procure no terminal que executou a api WEB pelo IP da rede local para passar para aplicação, exemplo: 192.168.15.6 e pego um cliente que tenha matrícula ativa.
+
+Acesse o ambiente virtual python e instale a biblioteca do robot para mobile
+
+```python
+pip install --upgrade robotframework-appiumlibrary
+```
+
+Para utilizar requisições HTTP, deve-se instalar a biblioteca do robot
+
+```python
+pip install robotframework-requests
+```
+
+## Exemplo do uso de HTTP Request no robot
+
+```python
+Get account by name
+    [Arguments]    ${name}
+    
+    ${params}    Create Dictionary
+    ...    name=${name}
+
+    ${headers}    Create Dictionary
+    ...    Authorization=${token}
+
+    ${resp}    GET
+    ...    url=http://localhost:3333/accounts
+    ...    params=${params}
+    ...    headers=${headers}
+    
+    [RETURN]    ${resp.json()}[data][0]
+```
