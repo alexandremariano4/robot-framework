@@ -297,7 +297,7 @@ Procure a parte de “Releases” e abra, pegue a última versão e fala o downl
   "appium:platformName": "Android",
   "appium:deviceName": "Appium",
   "appium:automationName": "UIAutomator2",
-  "appium:app": "C:\\Users\\alexa\\Documents\\Projetos\\Pessoais\\python-selenium\\robot-framework\\QAxperience\\smartbit-robot\\mobile\\app\\qax-smartbit.apk",
+  "appium:app": "C:\\Users\\alexa\\Documents\\Projetos\\Pessoais\\python-selenium\\robot-framework\\smartbit-robot\\mobile\\app\\qax-smartbit.apk",
   "appium:autoGrantPermissions": true
 }
 ```
@@ -310,7 +310,7 @@ Ou, pode inserir tudo em um objeto da seguinte forma como mostra na documentaç�
   "appium:options": {
     "automationName": "UIAutomator2",
     "deviceName": "Appium",
-    "app": "C:\\Users\\alexa\\Documents\\Projetos\\Pessoais\\python-selenium\\robot-framework\\QAxperience\\smartbit-robot\\mobile\\app\\qax-smartbit.apk",
+    "app": "C:\\Users\\alexa\\Documents\\Projetos\\Pessoais\\python-selenium\\robot-framework\\smartbit-robot\\mobile\\app\\qax-smartbit.apk",
     "autoGrantPermissions": true
   }
 }
@@ -366,4 +366,9 @@ Get account by name
     ...    headers=${headers}
     
     [RETURN]    ${resp.json()}[data][0]
+```
+## Executando o robot com variáveis na linha de coma
+
+```python
+robot -d .\logs\ -v BROWSER:firefox -v HEADLESS:True .\tests\login.robot
 ```

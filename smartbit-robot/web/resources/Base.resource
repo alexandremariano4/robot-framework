@@ -1,6 +1,9 @@
 *** Settings ***
 Documentation    Arquivo principal do projeto robot
 
+
+Variables    Env.py
+
 Library    Browser
 Library    ../../libs/Account.py
 Library    ../../libs/Database.py
@@ -24,8 +27,8 @@ ${ADMIN_PASS}     pwd123
 
 *** Keywords ***
 Start Session
-    New Browser    browser=chromium    headless=False
-    New Page    http://localhost:3000
+    New Browser    browser=${BROWSER}    headless=${HEADLESS}
+    New Page    ${BASE_URL}
 
 #Helpers
 Get Json fixture

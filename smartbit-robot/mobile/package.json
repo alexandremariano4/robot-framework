@@ -2,6 +2,9 @@
   "name": "mobile",
   "version": "1.0.0",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,8 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "appium": "^2.19.0",
-    "appium-doctor": "^1.16.2"
+    "appium": "^2.19.0"
   },
   "devDependencies": {
     "appium-uiautomator2-driver": "^4.2.4"
